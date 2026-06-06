@@ -104,7 +104,7 @@ function incrementoPrecio(pa,pi){
 }
 
 function porcentajeAumento(i, pi){
-    return (i / 10) * 100;
+    return (i / pi) * 100;
 }
 
 function gastoSemanal(pa, cc){
