@@ -1,0 +1,43 @@
+.slide-carburantes {
+    height: 420px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url('../img/carburantes.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-alimentos {
+    height: 420px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url('../img/alimentos.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-transporte {
+    height: 420px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url('../img/transporte.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.textos{
+    font-size: 13px;
+}
+
