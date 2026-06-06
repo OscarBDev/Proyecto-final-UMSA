@@ -75,6 +75,15 @@ function limpiarValidacionesAlimentos(){
     document.getElementById("validation_ns").innerText = "";
 }
 
+function limpiarResAlimentos(){
+    document.getElementById("r_producto").innerText = "";
+    document.getElementById("r_incremento").innerText = "";
+    document.getElementById("r_porcentaje").innerText = "";
+    document.getElementById("r_gasto_semanal").innerText = "";
+    document.getElementById("r_gasto_mensual").innerText = "";
+    document.getElementById("r_resultado").innerText = "";
+}
+
 function verProducto(pc){
     switch (pc) {
         case 1:
@@ -88,6 +97,7 @@ function verProducto(pc){
             break;
     }
 }
+
 
 function incrementoPrecio(pa,pi){
     return pa - pi;
@@ -140,7 +150,7 @@ function calcularAlimentos(){
         generarGrafica(gasto_antes, gasto_mensual);
 
         // limpiamos validciones
-        limpiarValidacionesAlimentos()
+        limpiarValidacionesAlimentos();
 
         // mostramos
         document.getElementById("r_producto").innerText = producto;
@@ -149,6 +159,9 @@ function calcularAlimentos(){
         document.getElementById("r_gasto_semanal").innerText = gasto_semanal.toFixed(2)+" Bs";
         document.getElementById("r_gasto_mensual").innerText = gasto_mensual.toFixed(2)+" Bs";
         document.getElementById("r_resultado").innerText = "La familia gasta "+diferencia_antes_ahora.toFixed(2)+" Bs mas al mes, debido al aumento del precio.";
+    }else{
+        // limpiamos los resulatdos anteriores
+        limpiarResAlimentos();
     }
     
 }

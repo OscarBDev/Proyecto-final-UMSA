@@ -13,6 +13,9 @@
   <!-- css personalizado -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/calendar.css">
+
+  <!-- css para el mapa -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 
 <body class="bg-light">
@@ -304,7 +307,7 @@
 
         <div class="row">
           <div class="col-lg-12">
-             <!-- grafica -->
+            <!-- grafica -->
             <div class="card">
               <div class="card-body">
                 <table class="table table-sm table-borderless">
@@ -545,44 +548,44 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- productos -->
-            <div class="card-tabs" id="productos">
-              <!-- Cards navigation -->
-              <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a href="#Pollo" class="nav-link active" data-bs-toggle="tab" aria-selected="true" role="tab" onclick="Pollo()">Pollo</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a href="#Huevo" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" onclick="Huevo()">Huevo</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a href="#Queso" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" onclick="Queso()">Queso</a>
-                </li>
-              </ul>
-              <div class="tab-content">
+              <div class="card-tabs" id="productos">
+                <!-- Cards navigation -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a href="#Pollo" class="nav-link active" data-bs-toggle="tab" aria-selected="true" role="tab" onclick="Pollo()">Pollo</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a href="#Huevo" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" onclick="Huevo()">Huevo</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a href="#Queso" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" onclick="Queso()">Queso</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
 
-                <!-- Content of card #1 -->
-                <div id="Pollo" class="card tab-pane active show" role="tabpanel">
-                  <div class="card-body">
-                    <canvas id="graficaPollo"></canvas>
+                  <!-- Content of card #1 -->
+                  <div id="Pollo" class="card tab-pane active show" role="tabpanel">
+                    <div class="card-body">
+                      <canvas id="graficaPollo"></canvas>
+                    </div>
                   </div>
-                </div>
 
-                <!-- Content of card #2 -->
-                <div id="Huevo" class="card tab-pane" role="tabpanel">
-                  <div class="card-body">
-                    <canvas id="graficaHuevo"></canvas>
+                  <!-- Content of card #2 -->
+                  <div id="Huevo" class="card tab-pane" role="tabpanel">
+                    <div class="card-body">
+                      <canvas id="graficaHuevo"></canvas>
+                    </div>
                   </div>
-                </div>
 
-                <!-- Content of card #3 -->
-                <div id="Queso" class="card tab-pane" role="tabpanel">
-                  <div class="card-body">
-                    <canvas id="graficaQueso"></canvas>
+                  <!-- Content of card #3 -->
+                  <div id="Queso" class="card tab-pane" role="tabpanel">
+                    <div class="card-body">
+                      <canvas id="graficaQueso"></canvas>
+                    </div>
                   </div>
-                </div>
 
+                </div>
               </div>
-            </div>
             </div>
           </div>
 
@@ -607,17 +610,17 @@
       <div class="card-body m-2">
 
         <div class="row">
-          
+
           <!-- sector del caculo -->
           <div class="col-lg-4">
             <div class="card">
               <div class="card-body">
-              
+
                 <!-- distancia normal -->
                 <div class="mb-3">
                   <label class="form-label">Distancia normal</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="ejemplo: 5.11" step="any" id="distancia_normal">
+                    <input type="number" class="form-control" placeholder="ejemplo: 5.11" step="any" value="5.11" id="distancia_normal">
                     <span class="input-group-text">km.</span>
                     <span class="text-danger" id="validation_dn"></span>
                   </div>
@@ -627,7 +630,7 @@
                 <div class="mb-3">
                   <label class="form-label">Distancia con desvio</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="ejemplo: 5.66" step="any" id="distancia_desvio">
+                    <input type="number" class="form-control" placeholder="ejemplo: 6.20" step="any" value="6.20" id="distancia_desvio">
                     <span class="input-group-text">Km.</span>
                     <span class="text-danger" id="validation_dd"></span>
                   </div>
@@ -637,7 +640,7 @@
                 <div class="mb-3">
                   <label class="form-label">Costo por kilometro</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="ejemplo: 0.44" step="any" id="costo_kilometro">
+                    <input type="number" class="form-control" placeholder="ejemplo: 0.49" step="any" value="0.49" id="costo_kilometro">
                     <span class="input-group-text">Bs</span>
                     <span class="text-danger" id="validation_ck"></span>
                   </div>
@@ -647,7 +650,7 @@
                 <div class="mb-3">
                   <label class="form-label">Numero de viajes por semana</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="ejemplo: 22" step="1" id="numero_viajes">
+                    <input type="number" class="form-control" placeholder="ejemplo: 22" step="1" value="22" id="numero_viajes">
                     <span class="input-group-text">Viajes</span>
                     <span class="text-danger" id="validation_nv"></span>
                   </div>
@@ -667,45 +670,44 @@
           <div class="col-lg-8">
             <div class="card-tabs">
               <!-- resultado -->
-                    <div class="card card-borderless">
-                      <div class="card-body">
-                        <h5 class="card-title">Resultado</h5>
-                        <div>
-                          <ul>
-                            <li>
-                              Producto:
-                              <span class="badge bg-success text-light mb-2 textos" id="r_producto">
-                              </span>
-                            </li>
-                            <li>
-                              Incremento del precio:
-                              <span class="badge bg-success text-light mb-2 textos" id="r_incremento">
-                              </span>
-                            </li>
-                            <li>
-                              Porcentaje de aumento:
-                              <span class="badge bg-success text-light mb-2 textos" id="r_porcentaje">
-                              </span>
-                            </li>
-                            <li>
-                              Gasto semanal:
-                              <span class="badge bg-success text-light mb-2 textos" id="r_gasto_semanal">
-                              </span>
-                            </li>
-                            <li>
-                              Gasto mensual estimado:
-                              <span class="badge bg-success text-light mb-2 textos" id="r_gasto_mensual">
-                              </span>
-                            </li>
-                            <li>
-                              Diferencia:
-                              <span class="badge bg-success text-light mb-2 textos" id="r_resultado">
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+              <div class="card card-borderless">
+                <div class="card-body">
+                  <h5 class="card-title">Resultado</h5>
+                  <div>
+                    <ul>
+                      <li>
+                        Costo normal:
+                        <span class="badge bg-dark text-light mb-2 textos" id="r_costo_normal">
+                        </span>
+                      </li>
+                      <li>
+                        Costo con desvíos:
+                        <span class="badge bg-dark text-light mb-2 textos" id="r_costo_desvio">
+                        </span>
+                      </li>
+                      <li>
+                        Diferencia por viaje:
+                        <span class="badge bg-dark text-light mb-2 textos" id="r_diferencia_viaje">
+                        </span>
+                      </li>
+                      <li>
+                        Gasto adicional semanal:
+                        <span class="badge bg-dark text-light mb-2 textos" id="r_gasto_adicional_semanal">
+                        </span>
+                      </li>
+                      <li>
+                        Gasto adicional mensual:
+                        <span class="badge bg-dark text-light mb-2 textos" id="r_gasto_adicional_mensual">
+                        </span>
+                      </li>
+                      <li>
+                        <span class="badge bg-dark text-light mb-2 textos" id="r_gasto_aprox">
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- casos de uso -->
@@ -724,9 +726,10 @@
         </div>
 
         <!-- mapa de bloqueos -->
-        <div class="row">
+        <div class="row mt-5">
           <div class="col-lg-12">
-            
+
+            <div id="mapa"></div>
 
           </div>
         </div>
@@ -752,10 +755,10 @@
           </h6>
           <p class="small">Verifica tu consumo de combustible, alimentos y transporte en cualquier momento.</p>
           <div class="d-flex gap-2 mt-3">
-            <a href="#" class="btn btn-outline-secondary btn-sm">
+            <a href="https://github.com/OscarBDev/Proyecto-final-UMSA" class="btn btn-outline-secondary btn-sm">
               <i class="bi bi-github"></i>
             </a>
-            <a href="#" class="btn btn-outline-secondary btn-sm">
+            <a href="https://oscarbdev.github.io/Proyecto-final-UMSA/" class="btn btn-outline-secondary btn-sm">
               <i class="bi bi-browser-chrome"></i>
             </a>
           </div>
@@ -806,6 +809,9 @@
             <span class="badge bg-secondary">
               <i class="bi bi-graph-up-arrow me-1"></i>Chart.js
             </span>
+            <span class="badge bg-secondary">
+              <i class="bi bi-filetype-json me-1"></i></i>API
+            </span>
           </div>
         </div>
         <!-- end columna 4 -->
@@ -828,6 +834,7 @@
   </footer>
   <!-- END FOOTER -->
 
+
   <!-- SCRIPT -->
   <script src="js/validaciones.js"></script>
   <script src="js/calculos.js"></script>
@@ -835,10 +842,15 @@
   <script src="js/alimentos.js"></script>
   <script src="js/graficaAlimentos.js"></script>
   <script src="js/graficasProductos.js"></script>
+  <script src="js/transporte.js"></script>
   <!-- BOOTSTRAP -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <!-- charts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- mapa -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/mapa.js"></script>
 
 </body>
 
