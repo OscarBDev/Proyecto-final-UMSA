@@ -50,3 +50,30 @@
 .empty{
     visibility:hidden;
 }
+
+/* para pantallas pequeñas */
+@media (max-width: 576px){
+
+    .calendar-mini{
+        max-width: 100%;
+    }
+
+    .calendar-header{
+        font-size: 0.6rem;
+    }
+
+    .calendar-days div{
+        font-size: 10px;
+    }
+
+    .day{
+        min-height: 40px;
+        padding: 2px;
+        font-size: 9px;
+    }
+
+    .day small{
+        display: block;
+        font-size: 8px;
+    }
+}

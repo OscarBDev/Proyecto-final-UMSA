@@ -41,6 +41,17 @@
     font-size: 13px;
 }
 
+@media (max-width: 676px){
+
+    .textos{
+        display: block;
+        width: 100%;
+        white-space: normal;
+        word-wrap: break-word;
+        font-size: 12px;
+    }
+}
+
 /* mapa */
 #mapa{
     height: 600px;
