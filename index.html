@@ -298,7 +298,13 @@
               </div>
             </div>
 
-            <!-- grafica -->
+          </div>
+          <!-- end sector 2 -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+             <!-- grafica -->
             <div class="card">
               <div class="card-body">
                 <table class="table table-sm table-borderless">
@@ -358,9 +364,7 @@
                 </table>
               </div>
             </div>
-
           </div>
-          <!-- end sector 2 -->
         </div>
 
       </div>
@@ -535,12 +539,17 @@
               </div>
             </div>
 
-            <!-- productos -->
+          </div>
+          <!-- end sector 2 -->
+
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- productos -->
             <div class="card-tabs" id="productos">
               <!-- Cards navigation -->
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <a href="#Pollo" class="nav-link active" data-bs-toggle="tab" aria-selected="true" role="tab">Pollo</a>
+                  <a href="#Pollo" class="nav-link active" data-bs-toggle="tab" aria-selected="true" role="tab" onclick="Pollo()">Pollo</a>
                 </li>
                 <li class="nav-item" role="presentation">
                   <a href="#Huevo" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab" tabindex="-1" onclick="Huevo()">Huevo</a>
@@ -574,9 +583,8 @@
 
               </div>
             </div>
-
+            </div>
           </div>
-          <!-- end sector 2 -->
 
         </div>
 
@@ -599,9 +607,130 @@
       <div class="card-body m-2">
 
         <div class="row">
-          <i class="bi bi-gear-wide-connected me-1"></i> Trabajando en ello...
+          
+          <!-- sector del caculo -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+              
+                <!-- distancia normal -->
+                <div class="mb-3">
+                  <label class="form-label">Distancia normal</label>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="ejemplo: 5.11" step="any" id="distancia_normal">
+                    <span class="input-group-text">km.</span>
+                    <span class="text-danger" id="validation_dn"></span>
+                  </div>
+                </div>
+
+                <!-- distancia con desvio -->
+                <div class="mb-3">
+                  <label class="form-label">Distancia con desvio</label>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="ejemplo: 5.66" step="any" id="distancia_desvio">
+                    <span class="input-group-text">Km.</span>
+                    <span class="text-danger" id="validation_dd"></span>
+                  </div>
+                </div>
+
+                <!-- costo por kilometro -->
+                <div class="mb-3">
+                  <label class="form-label">Costo por kilometro</label>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="ejemplo: 0.44" step="any" id="costo_kilometro">
+                    <span class="input-group-text">Bs</span>
+                    <span class="text-danger" id="validation_ck"></span>
+                  </div>
+                </div>
+
+                <!-- numero de viajes por semana -->
+                <div class="mb-3">
+                  <label class="form-label">Numero de viajes por semana</label>
+                  <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="ejemplo: 22" step="1" id="numero_viajes">
+                    <span class="input-group-text">Viajes</span>
+                    <span class="text-danger" id="validation_nv"></span>
+                  </div>
+                </div>
+
+                <!-- boton de calcular -->
+                <div class="d-grid">
+                  <button type="button" class="btn btn-dark btn-lg" onclick="calcularTransporte()">Calcular</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- end sector del caculo -->
+
+          <!-- sector 2 -->
+          <div class="col-lg-8">
+            <div class="card-tabs">
+              <!-- resultado -->
+                    <div class="card card-borderless">
+                      <div class="card-body">
+                        <h5 class="card-title">Resultado</h5>
+                        <div>
+                          <ul>
+                            <li>
+                              Producto:
+                              <span class="badge bg-success text-light mb-2 textos" id="r_producto">
+                              </span>
+                            </li>
+                            <li>
+                              Incremento del precio:
+                              <span class="badge bg-success text-light mb-2 textos" id="r_incremento">
+                              </span>
+                            </li>
+                            <li>
+                              Porcentaje de aumento:
+                              <span class="badge bg-success text-light mb-2 textos" id="r_porcentaje">
+                              </span>
+                            </li>
+                            <li>
+                              Gasto semanal:
+                              <span class="badge bg-success text-light mb-2 textos" id="r_gasto_semanal">
+                              </span>
+                            </li>
+                            <li>
+                              Gasto mensual estimado:
+                              <span class="badge bg-success text-light mb-2 textos" id="r_gasto_mensual">
+                              </span>
+                            </li>
+                            <li>
+                              Diferencia:
+                              <span class="badge bg-success text-light mb-2 textos" id="r_resultado">
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+
+            <!-- casos de uso -->
+            <div class="card card-borderless">
+              <div class="card-body">
+                <h5 class="card-title">Casos de Estudio</h5>
+                <div>
+                  La intencificaión de los bloqueos dentro del pais de Bolivia, provocaron que las vias y carreteras de Bolivia en particular de La Paz, se vean bloqueadas, lo que produce que el trasporte publico tome rutas de desvio no habituales, para poder llegar en algunos casos a sus paradas y en otros casos hasta donde se logre avanzar. <br>
+                  Aca abajo se muestra el mapa de bloqueos dentro del Pais.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end sector 2 -->
 
         </div>
+
+        <!-- mapa de bloqueos -->
+        <div class="row">
+          <div class="col-lg-12">
+            
+
+          </div>
+        </div>
+        <!-- end mapa de bloqueos -->
 
       </div>
     </div>

@@ -1,6 +1,11 @@
+let graficaActual = null;
 function crearGrafica(id, titulo, datos, color){
 
-    new Chart(document.getElementById(id), {
+    if(graficaActual){
+        graficaActual.destroy();
+    }
+
+    graficaActual = new Chart(document.getElementById(id), {
 
         type: 'line',
 
@@ -36,6 +41,14 @@ document.addEventListener("DOMContentLoaded", function(){
     );
 
 });
+function Pollo(){
+    crearGrafica(
+        "graficaPollo",
+        "Precio del Pollo en Bs",
+        [18, 30, 40, 80],
+        "#dc3545"
+    );
+}
 
 function Huevo(){
     crearGrafica(
