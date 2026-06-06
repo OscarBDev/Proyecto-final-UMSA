@@ -16,6 +16,9 @@
 
   <!-- css para el mapa -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+  <!-- icon -->
+  <link rel="icon" href="img/logo_sin-fondo.ico" type="image/x-icon">
 </head>
 
 <body class="bg-light">
@@ -180,7 +183,7 @@
                 <div class="mb-3">
                   <label class="form-label">Cantidad inicial de carburantes(Distribuidora)</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="150000" step="any" value="150000" id="cantidad_inicial">
+                    <input type="number" class="form-control" placeholder="ejemplo: 150000" step="any" value="150000" id="cantidad_inicial">
                     <span class="input-group-text" id="basic-addon1">Lts.</span>
                     <span class="text-danger" id="validation_ci"></span>
                   </div>
@@ -190,7 +193,7 @@
                 <div class="mb-3">
                   <label class="form-label">Consumo diario estimando</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="15000" step="any" value="15000" id="consumo_diario">
+                    <input type="number" class="form-control" placeholder="ejemplo: 15000" step="any" value="15000" id="consumo_diario">
                     <span class="input-group-text" id="basic-addon1">Lts.</span>
                     <span class="text-danger" id="validation_cd"></span>
                   </div>
@@ -200,7 +203,7 @@
                 <div class="mb-3">
                   <label class="form-label">Reavastesimiento diario</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="5000" step="any" value="5000" id="reavastesimiento_diario">
+                    <input type="number" class="form-control" placeholder="ejemplo: 5000" step="any" value="5000" id="reavastesimiento_diario">
                     <span class="input-group-text" id="basic-addon1">Lts.</span>
                     <span class="text-danger" id="validation_rd"></span>
                   </div>
@@ -210,7 +213,7 @@
                 <div class="mb-3">
                   <label class="form-label">Nivel critico de reserva</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="20000" step="any" value="20000" id="nivel_critico">
+                    <input type="number" class="form-control" placeholder="ejemplo: 20000" step="any" value="20000" id="nivel_critico">
                     <span class="input-group-text" id="basic-addon1">Lts.</span>
                     <span class="text-danger" id="validation_nc"></span>
                   </div>
@@ -411,7 +414,7 @@
                 <div class="mb-3">
                   <label class="form-label">Precio inicial</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="28" step="any" id="precio_inicial">
+                    <input type="number" class="form-control" placeholder="ejemplo: 28" step="any" id="precio_inicial">
                     <span class="input-group-text">Bs.</span>
                     <span class="text-danger" id="validation_pi"></span>
                   </div>
@@ -421,7 +424,7 @@
                 <div class="mb-3">
                   <label class="form-label">Precio Actual</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="120" step="any" id="precio_actual">
+                    <input type="number" class="form-control" placeholder="ejemplo: 120" step="any" id="precio_actual">
                     <span class="input-group-text">Bs.</span>
                     <span class="text-danger" id="validation_pa"></span>
                   </div>
@@ -432,7 +435,7 @@
                   <label class="form-label">Cantidada consumida</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Por semana</span>
-                    <input type="number" class="form-control" placeholder="2" step="1" id="cantidad_consumida">
+                    <input type="number" class="form-control" placeholder="ejemplo: 2" step="1" id="cantidad_consumida">
                     <span class="text-danger" id="validation_cc"></span>
                   </div>
                 </div>
@@ -441,7 +444,7 @@
                 <div class="mb-3">
                   <label class="form-label">Numero de semanas</label>
                   <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="4" step="1" id="numero_semanas">
+                    <input type="number" class="form-control" placeholder="ejemplo: 4" step="1" id="numero_semanas">
                     <span class="input-group-text">Semana</span>
                     <span class="text-danger" id="validation_ns"></span>
                   </div>
@@ -740,6 +743,7 @@
 
   </div>
   <!-- END TRANSPORTE -->
+
 
 
   <!-- FOOTER -->

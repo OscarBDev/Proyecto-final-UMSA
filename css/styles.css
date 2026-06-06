@@ -37,6 +37,11 @@
     background-position: center;
 }
 
+.logo{
+    width:40px;
+    height: 40px;
+}
+
 .textos{
     font-size: 13px;
 }
